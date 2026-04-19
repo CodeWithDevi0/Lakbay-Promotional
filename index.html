@@ -174,35 +174,60 @@
 
 
 
-  <!-- Philosophy strip -->
-  <section id="manifesto"
-    class="section-bleed relative overflow-hidden border-y border-neutral-100 bg-white py-24 sm:py-32">
-
+  <!-- Philosophy: The Lakbay Manifesto -->
+  <section id="manifesto" class="section-bleed relative overflow-hidden bg-white py-20 lg:py-28">
     <div
-      class="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal-50/50 blur-[100px]"
+      class="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-50/30 blur-[120px]"
       aria-hidden="true"></div>
 
-    <div id="manifesto-text" class="mx-auto max-w-4xl px-6 text-center">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="grid gap-16 lg:grid-cols-12 lg:gap-8">
+        
+        <!-- Column 1: Intro -->
+        <div class="lg:col-span-5">
+          <p class="section-kicker reveal" data-reveal>Our Philosophy</p>
+          <h2 class="mt-4 text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold leading-[1.1] tracking-[-0.05em] text-neutral-900 reveal" data-reveal>
+            Travel shouldn't start with a headache.
+          </h2>
+          <p class="mt-6 max-w-md text-lg leading-relaxed text-neutral-500 reveal reveal-delay-1" data-reveal>
+            We built Lakbay to replace the chaos of a dozen open tabs and silent group chats with a single, beautiful flow.
+          </p>
+        </div>
 
-      <p class="reveal text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold leading-[1.05] tracking-[-0.04em] text-neutral-900"
-        data-reveal>
-        Define the vibe.
-      </p>
+        <!-- Column 2: Pillars -->
+        <div class="space-y-12 lg:col-span-6 lg:col-start-7">
+          
+          <!-- Pillar 1 -->
+          <div class="reveal reveal-delay-2" data-reveal>
+            <h3 class="text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight text-neutral-900">1. Define the vibe.</h3>
+            <p class="mt-3 text-base leading-relaxed text-neutral-500">
+              Forget rows and columns. Tell us the energy you want for Siargao, and we’ll generate three ways to live it—from the budget bunkhouse to the private villa.
+            </p>
+          </div>
 
-      <p class="reveal reveal-delay-1 mt-2 text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold leading-[1.05] tracking-[-0.04em] text-neutral-300"
-        data-reveal>
-        Generate the plan.
-      </p>
+          <!-- Pillar 2 -->
+          <div class="reveal reveal-delay-3" data-reveal>
+            <h3 class="text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight text-neutral-900">2. Coordinate, don't argue.</h3>
+            <p class="mt-3 text-base leading-relaxed text-neutral-500">
+              The Canvas is your group’s single source of truth. Vote on routes and finalize the stay without losing the thread in a sea of Messenger links.
+            </p>
+          </div>
 
-      <p class="reveal reveal-delay-2 mt-2 text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold leading-[1.05] tracking-[-0.04em]"
-        data-reveal>
-        <span class="bg-gradient-to-r from-teal-500 to-orange-400 bg-clip-text text-transparent">
-          Reverse-engineer the math.
-        </span>
-      </p>
+          <!-- Pillar 3 -->
+          <div class="reveal reveal-delay-4" data-reveal>
+            <h3 class="text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">
+              <span class="bg-gradient-to-r from-teal-600 to-orange-500 bg-clip-text text-transparent">3. Own the math.</span>
+            </h3>
+            <p class="mt-3 text-base leading-relaxed text-neutral-500">
+              We reverse-engineer the total cost into a daily savings goal. Because the dream trip is easier when it costs less than a milk tea a day.
+            </p>
+          </div>
 
+        </div>
+      </div>
     </div>
   </section>
+
 
   <!-- Itinerary Engine: Redesigned for 3-Tier Generation -->
   <section id="ai-engine" class="section-bleed relative overflow-hidden bg-neutral-50/30">

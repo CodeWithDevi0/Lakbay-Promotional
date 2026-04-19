@@ -32,32 +32,52 @@
     </div>
   </header>
 
-  <!-- Hero: Apple-style poster (product + emotional line + CTAs) -->
-  <section id="hero" class="hero-shell">
-    <div class="absolute inset-0 hero-bg" aria-hidden="true"></div>
-    <div class="hero-gradient-overlay" aria-hidden="true"></div>
-    <div class="hero-glow hero-glow-teal" aria-hidden="true"></div>
-    <div class="hero-glow hero-glow-orange" aria-hidden="true"></div>
-
-    <div class="apple-hero-stage">
-      <p class="apple-wordmark reveal" data-reveal>Lakbay</p>
-      <p class="apple-hero-emotion reveal reveal-delay-1" data-reveal>The journey takes flight.</p>
-      <h1 class="apple-hero-product reveal reveal-delay-1" data-reveal>Plan the dream.</h1>
-      <p class="apple-hero-dek reveal reveal-delay-2" data-reveal>
-        Don't budget the trip first — describe the vibe. Lakbay turns it into a living itinerary, a shared canvas, and a
-        savings rhythm everyone can feel.
-      </p>
-      <div class="apple-hero-actions reveal reveal-delay-3" data-reveal>
-        <a href="#finale" class="apple-btn-primary">Start planning</a>
-        <a href="#highlights" class="apple-btn-ghost">See highlights</a>
+  <!-- Hero: Refined Product Showcase -->
+  <section id="hero"
+    class="relative flex min-h-[92vh] w-full items-center justify-center overflow-hidden bg-neutral-900 px-6 py-20 lg:min-h-[732px]">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 z-0">
+      <div
+        class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-20 grayscale">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-neutral-900/40 via-neutral-900/80 to-neutral-900"></div>
+      <div class="absolute -top-[10%] left-[10%] h-[400px] w-[400px] rounded-full bg-teal-500/10 blur-[100px]"></div>
+      <div class="absolute -bottom-[10%] right-[10%] h-[400px] w-[400px] rounded-full bg-orange-500/10 blur-[100px]">
       </div>
     </div>
 
-    <div class="hero-scroll reveal reveal-delay-4" data-reveal>
-      <span class="hero-scroll-line" aria-hidden="true"></span>
-      <span class="hero-scroll-label">Scroll</span>
+    <div class="relative z-10 w-full max-w-[840px] text-center">
+      <div class="flex flex-col items-center">
+        <p class="mb-4 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 backdrop-blur-md reveal"
+          data-reveal>
+          Lakbay 2026
+        </p>
+        <h1
+          class="text-[clamp(2.5rem,8vw,5.5rem)] font-extrabold leading-[1] tracking-[-0.05em] text-white reveal reveal-delay-1"
+          data-reveal>
+          Plan the dream.
+        </h1>
+        <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/60 reveal reveal-delay-2" data-reveal>
+          From sought-after vibes to hidden local gems, Lakbay turns your group’s dream into a tiered itinerary and a
+          shared savings rhythm everyone can feel.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-4 reveal reveal-delay-3" data-reveal>
+          <a href="#finale" class="apple-btn-primary h-12 px-8 text-sm font-semibold">Start your plan</a>
+          <a href="#highlights" class="apple-btn-ghost h-12 px-8 text-sm font-semibold text-white hover:bg-white/10">See
+            highlights</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Hint -->
+    <div
+      class="absolute bottom-12 left-0 right-0 z-20 flex flex-col items-center gap-3 opacity-40 reveal reveal-delay-4"
+      data-reveal>
+      <div class="h-12 w-[1px] bg-gradient-to-b from-white to-transparent"></div>
+      <span class="text-[10px] uppercase tracking-widest text-white font-medium">Scroll</span>
     </div>
   </section>
+
 
   <!-- Highlights: Bento Showcase -->
   <section id="highlights" class="section-bleed bg-white pt-16 lg:pt-20">
@@ -182,44 +202,52 @@
 
     <div class="mx-auto max-w-5xl px-6">
       <div class="grid gap-16 lg:grid-cols-12 lg:gap-8">
-        
+
         <!-- Column 1: Intro -->
         <div class="lg:col-span-5">
           <p class="section-kicker reveal" data-reveal>Our Philosophy</p>
-          <h2 class="mt-4 text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold leading-[1.1] tracking-[-0.05em] text-neutral-900 reveal" data-reveal>
+          <h2
+            class="mt-4 text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold leading-[1.1] tracking-[-0.05em] text-neutral-900 reveal"
+            data-reveal>
             Travel shouldn't start with a headache.
           </h2>
           <p class="mt-6 max-w-md text-lg leading-relaxed text-neutral-500 reveal reveal-delay-1" data-reveal>
-            We built Lakbay to replace the chaos of a dozen open tabs and silent group chats with a single, beautiful flow.
+            We built Lakbay to replace the chaos of a dozen open tabs and silent group chats with a single, beautiful
+            flow.
           </p>
         </div>
 
         <!-- Column 2: Pillars -->
         <div class="space-y-12 lg:col-span-6 lg:col-start-7">
-          
+
           <!-- Pillar 1 -->
           <div class="reveal reveal-delay-2" data-reveal>
             <h3 class="text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight text-neutral-900">1. Define the vibe.</h3>
             <p class="mt-3 text-base leading-relaxed text-neutral-500">
-              Forget rows and columns. Tell us the energy you want for Siargao, and we’ll generate three ways to live it—from the budget bunkhouse to the private villa.
+              Forget rows and columns. Tell us the energy you want for Siargao, and we’ll generate three ways to live
+              it—from the budget bunkhouse to the private villa.
             </p>
           </div>
 
           <!-- Pillar 2 -->
           <div class="reveal reveal-delay-3" data-reveal>
-            <h3 class="text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight text-neutral-900">2. Coordinate, don't argue.</h3>
+            <h3 class="text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight text-neutral-900">2. Coordinate, don't
+              argue.</h3>
             <p class="mt-3 text-base leading-relaxed text-neutral-500">
-              The Canvas is your group’s single source of truth. Vote on routes and finalize the stay without losing the thread in a sea of Messenger links.
+              The Canvas is your group’s single source of truth. Vote on routes and finalize the stay without losing the
+              thread in a sea of Messenger links.
             </p>
           </div>
 
           <!-- Pillar 3 -->
           <div class="reveal reveal-delay-4" data-reveal>
             <h3 class="text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">
-              <span class="bg-gradient-to-r from-teal-600 to-orange-500 bg-clip-text text-transparent">3. Own the math.</span>
+              <span class="bg-gradient-to-r from-teal-600 to-orange-500 bg-clip-text text-transparent">3. Own the
+                math.</span>
             </h3>
             <p class="mt-3 text-base leading-relaxed text-neutral-500">
-              We reverse-engineer the total cost into a daily savings goal. Because the dream trip is easier when it costs less than a milk tea a day.
+              We reverse-engineer the total cost into a daily savings goal. Because the dream trip is easier when it
+              costs less than a milk tea a day.
             </p>
           </div>
 

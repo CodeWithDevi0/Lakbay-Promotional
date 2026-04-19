@@ -850,71 +850,92 @@
     </div>
   </section>
 
-  <!-- Memory -->
-  <section id="memory" class="section-bleed relative overflow-hidden bg-black text-white lg:py-40">
-    <div class="absolute inset-0 opacity-35">
-      <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=2000&q=80" alt=""
-        class="h-full w-full object-cover grayscale" />
+    <!-- Memory: The Archive -->
+  <section id="memory" class="section-bleed relative overflow-hidden bg-black py-24 lg:py-32">
+    <!-- Immersive Background -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-25 grayscale"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
+      <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
     </div>
-    <div class="absolute inset-0 bg-gradient-to-b from-black via-black/92 to-black"></div>
-    <div class="relative z-10 mx-auto max-w-6xl">
-      <div class="mx-auto max-w-3xl text-center">
-        <p class="section-kicker-invert reveal" data-reveal>After the return</p>
-        <h2 class="heading-display-invert reveal text-[clamp(1.85rem,4vw,3.25rem)]" data-reveal>
-          The itinerary becomes your Memory Space.
-        </h2>
-        <p class="mx-auto mt-6 max-w-xl text-lg font-light leading-relaxed text-white/55 reveal" data-reveal>
-          Automatically archived: photos, pins, and scrapbook pages — one shared room for the story you lived.
-        </p>
-      </div>
-      <div class="relative mx-auto mt-20 min-h-[440px] max-w-5xl lg:min-h-[480px]">
-        <div class="absolute left-[8%] top-[6%] z-20 reveal" data-reveal>
-          <div class="scrapbook-pin text-3xl">📍</div>
-          <p class="mt-1 text-[10px] uppercase tracking-widest text-white/50">Cloud 9</p>
-        </div>
-        <div class="absolute right-[12%] top-[18%] z-20 reveal reveal-delay-1" data-reveal>
-          <div class="scrapbook-pin text-3xl">📍</div>
-          <p class="mt-1 text-[10px] uppercase tracking-widest text-white/50">Magpupungko</p>
-        </div>
-        <div class="polaroid absolute left-[26%] top-[4%] w-40 rotate-[-5deg] bg-white p-2 pb-7 reveal-scale"
-          data-reveal-scale>
-          <div class="aspect-[4/5] overflow-hidden rounded-sm bg-neutral-200">
-            <img src="https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=400&q=80"
-              alt="" class="h-full w-full object-cover" />
-          </div>
-          <p class="mt-2 text-center text-[10px] font-medium tracking-wide text-neutral-500">Day 1 — first surf</p>
-        </div>
-        <div class="polaroid absolute bottom-[14%] right-[6%] w-44 rotate-[4deg] bg-white p-2 pb-7 reveal-scale"
-          data-reveal-scale>
-          <div class="aspect-[4/5] overflow-hidden rounded-sm bg-neutral-200">
-            <img src="https://images.unsplash.com/photo-1533154110335-e4141d8e1329?auto=format&fit=crop&w=400&q=80"
-              alt="" class="h-full w-full object-cover" />
-          </div>
-          <p class="mt-2 text-center text-[10px] font-medium tracking-wide text-neutral-500">Guyam Island</p>
-        </div>
-        <div class="polaroid absolute right-[30%] top-[36%] w-36 rotate-[-2deg] bg-white p-2 pb-6 reveal" data-reveal>
-          <div class="aspect-square overflow-hidden rounded-sm bg-neutral-200">
-            <img src="https://images.unsplash.com/photo-1517511620798-cec17d428bc0?auto=format&fit=crop&w=400&q=80"
-              alt="" class="h-full w-full object-cover" />
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="grid items-center gap-16 lg:grid-cols-2">
+        
+        <!-- Text Content -->
+        <div class="max-w-xl">
+          <p class="section-kicker-invert reveal" data-reveal>After the return</p>
+          <h2 class="mt-4 text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold leading-[1.05] tracking-[-0.05em] text-white reveal reveal-delay-1" data-reveal>
+            Live it.<br>
+            <span class="text-neutral-500">Re-live it.</span>
+          </h2>
+          <p class="mt-8 text-xl font-light leading-relaxed text-neutral-400 reveal reveal-delay-2" data-reveal>
+            Once the trip ends, your itinerary automatically transforms into a shared Memory Space. Your barkada's photos, pins, and stories—synced into one permanent archive.
+          </p>
+          
+          <div class="mt-12 flex items-center gap-6 reveal reveal-delay-3" data-reveal>
+            <div class="flex flex-col">
+              <span class="text-2xl font-bold text-white">420+</span>
+              <span class="text-[11px] font-bold uppercase tracking-widest text-neutral-500">Photos Synced</span>
+            </div>
+            <div class="h-8 w-[1px] bg-white/10"></div>
+            <div class="flex flex-col">
+              <span class="text-2xl font-bold text-white">12</span>
+              <span class="text-[11px] font-bold uppercase tracking-widest text-neutral-500">Shared Stories</span>
+            </div>
           </div>
         </div>
-        <div
-          class="polaroid absolute bottom-[26%] left-[10%] w-32 rotate-[6deg] bg-white p-2 pb-5 reveal reveal-delay-2"
-          data-reveal>
-          <div class="aspect-[5/6] overflow-hidden rounded-sm bg-neutral-200">
-            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=400&q=80"
-              alt="" class="h-full w-full object-cover" />
+
+        <!-- The Scrapbook Visuals -->
+        <div class="relative h-[500px] w-full lg:h-[600px]">
+          <!-- Polaroid Stack -->
+          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-full">
+            
+            <!-- Main Polaroid -->
+            <div class="absolute left-[15%] top-[10%] w-56 rotate-[-6deg] rounded-sm bg-white p-3 pb-10 shadow-2xl reveal-scale" data-reveal-scale>
+              <div class="aspect-[4/5] overflow-hidden bg-neutral-200">
+                <img src="https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=600&q=80" alt="Siargao Surf" class="h-full w-full object-cover" />
+              </div>
+              <p class="mt-3 text-center font-handwriting text-lg text-neutral-800">Day 2: Cloud 9 Surf Session 🏄‍♂️</p>
+            </div>
+
+            <!-- Secondary Polaroid -->
+            <div class="absolute bottom-[15%] right-[10%] w-48 rotate-[8deg] rounded-sm bg-white p-2.5 pb-8 shadow-2xl reveal-scale reveal-delay-1" data-reveal-scale>
+              <div class="aspect-square overflow-hidden bg-neutral-200">
+                <img src="https://images.unsplash.com/photo-1517511620798-cec17d428bc0?auto=format&fit=crop&w=500&q=80" alt="Island Hopping" class="h-full w-full object-cover" />
+              </div>
+              <p class="mt-2 text-center font-handwriting text-sm text-neutral-700">Magpupungko Pools</p>
+            </div>
+
+            <!-- Tertiary Photo -->
+            <div class="absolute left-[40%] bottom-[5%] w-40 rotate-[-2deg] rounded-sm bg-white p-2 pb-6 shadow-xl reveal-scale reveal-delay-2" data-reveal-scale>
+              <div class="aspect-[3/4] overflow-hidden bg-neutral-200">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=400&q=80" alt="Sunset" class="h-full w-full object-cover" />
+              </div>
+            </div>
+
+            <!-- Floating UI Tags -->
+            <div class="absolute right-[20%] top-[25%] z-20 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium text-white backdrop-blur-md reveal" data-reveal>
+              📍 Guyam Island
+            </div>
+            
+            <div class="absolute left-[10%] bottom-[35%] z-20 rounded-full border border-teal-500/30 bg-teal-500/10 px-4 py-1.5 text-xs font-medium text-teal-400 backdrop-blur-md reveal reveal-delay-3" data-reveal>
+              ✨ Best vibe
+            </div>
+
+            <!-- Archive Badge -->
+            <div class="absolute right-0 top-0 flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl reveal" data-reveal>
+              <div class="h-2 w-2 rounded-full bg-teal-500 animate-pulse"></div>
+              <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">Archived</p>
+            </div>
+
           </div>
         </div>
-        <div class="absolute left-[36%] top-[46%] z-20 max-w-xs reveal" data-reveal>
-          <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left backdrop-blur-md">
-            <p class="text-xs tracking-tight text-white/70">Auto-synced from your trip timeline</p>
-            <p class="mt-1 text-sm font-semibold tracking-tight">Scrapbook mode: ON</p>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
+
 
   <!-- Bento -->
   <section id="bento" class="section-bleed border-y border-neutral-100 bg-neutral-50 text-neutral-900">

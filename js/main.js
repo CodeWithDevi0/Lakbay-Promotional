@@ -7,6 +7,13 @@
   const manifestoSection = document.getElementById("manifesto");
   const scrollTopBtn = document.getElementById("scroll-top-btn");
 
+  // Mobile Menu Elements
+  const mobileBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileLinks = document.querySelectorAll(".mobile-link");
+  const burgerLines = mobileBtn ? mobileBtn.querySelectorAll("span") : [];
+  let isMenuOpen = false;
+
   function updateScrollTopBtn() {
     if (!scrollTopBtn) return;
     const y = window.scrollY || document.documentElement.scrollTop;
@@ -33,45 +40,78 @@
     const heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
     const memoryTop = memory ? memory.getBoundingClientRect().top : Infinity;
     const finaleTop = finale ? finale.getBoundingClientRect().top : Infinity;
-    const onDark =
-      (memoryTop < 120 && finaleTop > -100) || finaleTop < 200;
+    
+    const onDark = (memoryTop < 120 && finaleTop > -100) || finaleTop < 200;
     const pastHero = heroBottom < 80;
-
-    nav.classList.remove("navbar-glass", "navbar-solid", "navbar-dark");
-    if (onDark) {
-      nav.classList.add("navbar-dark");
-    } else if (pastHero) {
-      nav.classList.add("navbar-solid");
-    } else {
-      nav.classList.add("navbar-glass");
-    }
 
     const logo = nav.querySelector(".nav-logo");
     const links = nav.querySelectorAll(".nav-links a");
 
+    nav.className = "fixed left-0 right-0 top-0 z-50 transition-all duration-300";
+
+    // If mobile menu is open, lock text/icons to white
+    if (isMenuOpen) {
+      nav.classList.add("bg-transparent");
+      if (logo) logo.className = "nav-logo text-[17px] font-semibold tracking-tight text-white";
+      burgerLines.forEach(l => l.className = "block h-[2px] w-full rounded-full bg-white transition-all duration-300");
+      // Animate to 'X'
+      burgerLines[0].classList.add("rotate-45", "translate-y-[7px]");
+      burgerLines[1].classList.add("opacity-0");
+      burgerLines[2].classList.add("-rotate-45", "-translate-y-[7px]");
+      return; 
+    }
+
     if (onDark) {
-      logo?.classList.remove("text-neutral-900");
-      logo?.classList.add("text-white");
-      links.forEach((a) => {
-        a.classList.remove("text-neutral-700");
-        a.classList.add("text-white/90");
-      });
+      // Dark sections
+      nav.classList.add("bg-neutral-950/90", "backdrop-blur-md", "border-b", "border-white/5");
+      if (logo) logo.className = "nav-logo text-[17px] font-semibold tracking-tight text-white hover:text-teal-400 transition-colors";
+      links.forEach(l => l.className = "transition-colors hover:text-teal-400 text-white/80");
+      burgerLines.forEach(l => l.className = "block h-[2px] w-full rounded-full bg-white transition-all duration-300");
     } else if (pastHero) {
-      logo?.classList.add("text-neutral-900");
-      logo?.classList.remove("text-white");
-      links.forEach((a) => {
-        a.classList.add("text-neutral-700");
-        a.classList.remove("text-white/90");
-      });
+      // Light sections
+      nav.classList.add("bg-white/90", "backdrop-blur-md", "border-b", "border-neutral-200", "shadow-sm");
+      if (logo) logo.className = "nav-logo text-[17px] font-semibold tracking-tight text-neutral-900 hover:text-teal-600 transition-colors";
+      links.forEach(l => l.className = "transition-colors hover:text-teal-600 text-neutral-600");
+      burgerLines.forEach(l => l.className = "block h-[2px] w-full rounded-full bg-neutral-900 transition-all duration-300");
     } else {
-      logo?.classList.remove("text-neutral-900");
-      logo?.classList.add("text-white");
-      links.forEach((a) => {
-        a.classList.remove("text-neutral-700");
-        a.classList.add("text-white/90");
-      });
+      // Hero section
+      nav.classList.add("bg-transparent", "pt-2"); 
+      if (logo) logo.className = "nav-logo text-[17px] font-semibold tracking-tight text-white hover:text-teal-400 transition-colors";
+      links.forEach(l => l.className = "transition-colors hover:text-teal-400 text-white/90");
+      burgerLines.forEach(l => l.className = "block h-[2px] w-full rounded-full bg-white transition-all duration-300");
     }
   }
+
+  function toggleMenu() {
+    if (!mobileMenu || !mobileBtn) return;
+    isMenuOpen = !isMenuOpen;
+    
+    if (isMenuOpen) {
+      mobileMenu.classList.remove("opacity-0", "pointer-events-none");
+      mobileMenu.classList.add("opacity-100", "pointer-events-auto");
+      document.body.style.overflow = "hidden";
+    } else {
+      mobileMenu.classList.remove("opacity-100", "pointer-events-auto");
+      mobileMenu.classList.add("opacity-0", "pointer-events-none");
+      document.body.style.overflow = "";
+      
+      // Reset burger lines
+      burgerLines[0].classList.remove("rotate-45", "translate-y-[7px]");
+      burgerLines[1].classList.remove("opacity-0");
+      burgerLines[2].classList.remove("-rotate-45", "-translate-y-[7px]");
+    }
+    updateNav();
+  }
+
+  if (mobileBtn) {
+    mobileBtn.addEventListener("click", toggleMenu);
+  }
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (isMenuOpen) toggleMenu();
+    });
+  });
 
   function updateManifestoOpacity() {
     if (!manifestoSection || !manifestoLines.length) return;
@@ -103,19 +143,67 @@
   document.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
   document.querySelectorAll("[data-reveal-scale]").forEach((el) => io.observe(el));
 
-  window.addEventListener(
-    "scroll",
-    () => {
-      updateNav();
-      updateManifestoOpacity();
-      updateScrollTopBtn();
-    },
-    { passive: true }
-  );
+  const budgetBar = document.getElementById('budget-progress');
+  if (budgetBar) {
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bar = entry.target;
+          bar.style.width = bar.getAttribute('data-target');
+          barObserver.unobserve(bar); 
+        }
+      });
+    }, { threshold: 0.5 });
+    barObserver.observe(budgetBar);
+  }
+
+  const texts = ["City, country, or vibe", "Siargao, #SlowSurf", "Tokyo, #Foodie", "Palawan, Island Hopping"];
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const input = document.getElementById("destination-input");
+
+  function typeEffect() {
+    if (!input) return;
+    const currentText = texts[textIndex];
+    
+    if (isDeleting) {
+      input.placeholder = currentText.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      input.placeholder = currentText.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    let typeSpeed = isDeleting ? 40 : 80;
+
+    if (!isDeleting && charIndex === currentText.length) {
+      typeSpeed = 2000;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      textIndex = (textIndex + 1) % texts.length;
+      typeSpeed = 500;
+    }
+    setTimeout(typeEffect, typeSpeed);
+  }
+
+  if (input) setTimeout(typeEffect, 1500);
+
+  window.addEventListener("scroll", () => {
+    updateNav();
+    updateManifestoOpacity();
+    updateScrollTopBtn();
+  }, { passive: true });
+
   window.addEventListener("resize", () => {
     updateNav();
     updateManifestoOpacity();
     updateScrollTopBtn();
+    
+    if (window.innerWidth >= 1024 && isMenuOpen) {
+      toggleMenu();
+    }
   });
 
   scrollTopBtn?.addEventListener("click", () => {
